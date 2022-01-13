@@ -1,5 +1,7 @@
 # depslib dependency file v1.0
-1642059881 source:c:\users\bakhtiyar\onedrive\desktop\c++\login register\main.cpp
+1642082416 source:c:\users\bakhtiyar\onedrive\desktop\c++\login register\main.cpp
 	<iostream>
 	<fstream>
+	<sstream>
+	<math.h>
 
