@@ -54,7 +54,7 @@
             if(checkFile(username, "user.dat") != 0)
             {
                 cout << "that user name is not available\n";
-                 AddUser(); // will exit code immediately
+                 AddUser(); 
             }
             else
             {
