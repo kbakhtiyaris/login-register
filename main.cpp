@@ -42,6 +42,54 @@
                 }
         }
 
+<<<<<<< Updated upstream
+=======
+        void AddUser()
+        {
+             string username;
+             string password;
+               int id = 1 + getLastID();
+             cout << "select username\n";
+             cin >> username;
+            if(checkFile(username, "user.dat") != 0)
+            {
+                cout << "that user name is not available\n";
+                 AddUser(); // will exit code immediately
+            }
+            else
+            {
+                 saveFile(username, "user.dat", id);
+            }
+
+
+          cout << "set password\n";
+          cin >> password;
+           saveFile(password, "pass.dat", id);
+
+        }
+
+        int getLastID()
+        {
+            fstream file;
+            file.open("user.dat", ios::in);
+            file.seekg(0, ios::end);
+
+            if (file.tellg() == -1)
+                return 0;
+            string s;
+
+            for(int i = -1; s.find("#") == string::npos; i--)
+            {
+                file.seekg(i, ios::end);
+                file >> s;
+            }
+            file.close();
+            s.erase(0, 4);
+            int id;// temp varaible
+            istringstream(s) >> id; // to convert string into int
+            return id;
+        }
+>>>>>>> Stashed changes
 
         string getFile(char *Credentials){
         string data;
@@ -97,9 +145,35 @@
 
 
 int main() {
-
+int option;
 LoginManager cred;
+<<<<<<< Updated upstream
 cred.Login();
+=======
+
+
+//            username       password
+//cred.AddUser("bakhtiyaris", "bakhtiyar");  // add username and password using this function
+
+ cout << "****************************************************" << "WELCOME" << "****************************************************\n" << endl;
+     cout << "Already have a account press 1 to logIn\n " << "To create a account press 2\n" << "To exit press 3\n" <<endl;
+     cin >> option;
+
+if (option == 1)
+{
+    cred.Login();
+}
+else if (option == 2)
+{
+    cred.AddUser();
+}
+else if (option == 3)
+{
+    cout << "we are sad to see you going ,\n visit again soon\n";
+    return 0;
+
+}
+>>>>>>> Stashed changes
 
 cin.get();
 }
